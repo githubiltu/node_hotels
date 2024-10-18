@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-const mongoURL = 'mongodb://localhost:27017/hotels';
-
+require('dotenv').config()
+// const mongoURL = 'mongodb://localhost:27017/hotels';
 // Connect to MongoDB without deprecated options
+// const mongoURL=process.env.MONGODB_URL_LOCAL;
+const mongoURL=process.env.MONGODB_URL;
 mongoose.connect(mongoURL);
 
 const db = mongoose.connection;
